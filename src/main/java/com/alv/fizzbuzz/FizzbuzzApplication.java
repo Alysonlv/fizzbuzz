@@ -1,6 +1,7 @@
 package com.alv.fizzbuzz;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan
 @EnableAutoConfiguration
+@SpringBootConfiguration
 public class FizzbuzzApplication extends SpringBootServletInitializer {
 
 	@Override
