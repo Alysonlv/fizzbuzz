@@ -5,10 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,8 +18,6 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Controller
 public class FizzBuzzController {
-
-    private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     FizzBuzzService fizzBuzzService;
@@ -45,9 +44,6 @@ public class FizzBuzzController {
         ModelAndView mv = new ModelAndView();
         mv.addObject("error_message",ex.getMessage());
         mv.setViewName(INDEX_PAGE);
-
-        LOG.error(ex.getMessage(), ex);
-
         return mv;
     }
 
